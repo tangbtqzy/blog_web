@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>
+       comment list
+    </title>
+  </head>
+  <body>
+    <div>
+      <span style='font-size:14px;font-weight:bold;line-height:30px;'>
+         List
+      </span>
+      <br/>
+      <ul  style="list-style:none;">
+        <li  style='line-height:30px;font-size:15px;'>
+           <div style='width:20%;float:left;'>
+            Id
+           </div>
+          <div style='width:40%;float:left;'>
+            标题
+          </div>
+           <div style='width:40%;float:left;'>
+            内容
+          </div>
+        </li>
+       <% @comment_all.each do |f|%>
+        <li  style='line-height:30px;font-size:15px;'>
+          <div style='width:20%;float:left;'>
+            <%= link_to f.id ,f , alt:f.id %>
+          </div>
+          <div style='width:40%;float:left;'>
+            <%= link_to f.title ,f , alt:f.title %>
+          </div>
+          <div style='width:40%;float:left;'>
+            <%= link_to f.content%>
+          </div>
+          </li>
+          <br/>
+       <% end %>
+        </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+ <%= form_for @comment , url: comment_index_path, remote: true do |f| %>
+      <%= link_to "主题" %>
+      <%= f.text_field :title, class: "textobx", id: "title" %>
+      <br/>
+      <%= link_to "内容" %>
+      <%= f.text_field :content,class: "textbox",id: "content" %>
+      <br/>
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+      <%= f.submit %>
+    <% end %>

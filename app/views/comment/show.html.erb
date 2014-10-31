@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>
+      Detail info
+    </title>
+  </head>
+  <body>
+    <div>
+    <a href= "/">
+      <input type='button'  value='Home' />
+    </a>
+    <a href="javascript:window.history.go(-1)">
+      <input type='button'  value='Preview' />
+    </a>
+    <a href="/comment">
+      <input type='button'  value='Add' />
+    </a>
+    <br/>
+      <span style="font-size:30px;font-weight:bold;">
+        Comment Detail Info
+        <br/>
+         标题:<%= raw @commentdetail.title %>
+         <br/>
+         内容:<%= raw @commentdetail.content %>
+         <br/>
+        配置:<%= raw @getinfo %> 
+      </span>
+    </div>
+  </body>
+</html>
