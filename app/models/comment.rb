@@ -7,8 +7,12 @@ class Comment < ActiveRecord::Base
    #def new 
     #@result = Comments.new
   #end
+<<<<<<< HEAD
   class << self
     
+=======
+  class << self   
+>>>>>>> test
     def save params
        #print '23'
        #self.new params
