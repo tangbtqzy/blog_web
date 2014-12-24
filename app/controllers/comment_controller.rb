@@ -15,7 +15,8 @@ class CommentController < ApplicationController
     redirect_to '/comment'
     #render 'comment/list'
   end
- # del page
+ 
+# del page
   def  del
   	
   end
