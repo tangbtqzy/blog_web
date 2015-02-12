@@ -1,0 +1,11 @@
+<%= form_for @banner, url: 'home' do |ban| %>
+  <% ban.label "标题" %>
+  <%= ban.text_field :title %>
+  <br/>
+  <% ban.label "图片地址" %>
+  <%= ban.file_field :img_url %>
+  <br/>
+  <% ban.label "链接地址" %>
+  <%= ban.text_field :link_url %>
+  <%= ban.submit "提交" %>
+<% end %>

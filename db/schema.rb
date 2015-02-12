@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008021945) do
+ActiveRecord::Schema.define(version: 20150212035605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
+  create_table "banner_manages", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "img_url"
+    t.string   "page_routes"
+    t.string   "title"
+    t.string   "link_url"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.string   "title"
