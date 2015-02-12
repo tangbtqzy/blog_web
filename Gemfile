@@ -40,6 +40,13 @@ gem 'pry'
 gem 'pry-remote'
 gem 'pry-nav'
 
+gem "pry-rails", "~> 0.3.2"
+gem 'pry-byebug', "~> 2.0.0"
+
+# file upload
+# https://github.com/carrierwaveuploader/carrierwave
+gem 'carrierwave'
+gem 'uuid'
 # tangbt end 
 
 # Use ActiveModel has_secure_password
