@@ -39,7 +39,9 @@ gem 'pg'
 gem 'pry'
 gem 'pry-remote'
 gem 'pry-nav'
-
+# open url
+gem 'nokogiri'
+gem 'wombat'
 # tangbt end 
 
 # Use ActiveModel has_secure_password

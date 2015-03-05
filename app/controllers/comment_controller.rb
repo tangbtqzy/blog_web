@@ -1,6 +1,7 @@
 # encoding: utf-8
 class CommentController < ApplicationController
-  
+  require 'nokogiri'
+  require 'open-uri'
   # home page 
   def index
     @comment = Comment.new
@@ -47,13 +48,51 @@ class CommentController < ApplicationController
   def update 
 
   end 
+  
+  # get_content
+  def get_content
+    ur = "http://www.huawei.com/jp"
+    Util.debug '&&&&&&&&&&&&&&&&'
+    Util.debug f = open(ur)
+    Util.debug f.charset
+    Util.debug str = Nokogiri::HTML(f,nil,f.charset)
+    Util.debug  str.encoding = "UTF-8"
+    Util.debug script = str.xpath("//script").text.delete("\t").split("\n").delete("")
+    Util.debug body = str.xpath("//body").text.delete("\t").split("\n").delete("")
+    Util.debug '&&&&&&&&&&&&&&&&'
+    get_data
+  end
 
   private 
+
     def  getcreate
       @post = Post.find(params[:title])
       @comment = @post.comments.new(params[:comment])
       BaseConfig.sendmail
       params.require(:comment).permit(:title, :content)
     end
- 
+
+    def get_data
+      require 'wombat'
+      Wombat.crawl do
+        base_url "https://www.github.com"
+        path "/"
+
+        headline xpath: "//h1"
+        subheading css: "p.subheading"
+
+        what_is({ css: ".one-half h3" }, :list)
+
+        links do
+          explore xpath: '//*[@class="wrapper"]/div[1]/div[1]/div[2]/ul/li[1]/a' do |e|
+            binding.pry
+            e.gsub(/Explore/, "Love")
+          end
+
+          features css: '.features'
+          enterprise css: '.enterprise'
+          blog css: '.blog'
+        end
+      end
+    end
 end

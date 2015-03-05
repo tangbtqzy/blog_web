@@ -1,0 +1,23 @@
+# encoding: utf-8
+# require 'ya2yaml'
+
+fp = 'test.rb'
+modul = File.stat(fp).mode
+puts "该文件权限:#{modul}"
+exist = File.exist?(fp)
+puts exist
+file = File.new(fp,'r')
+while line = file.gets
+  puts line
+end
+file.close
+puts '********************************'
+puts File.dirname(fp)
+puts File.basename(fp)
+puts '********************************'
+puts Dir.pwd
+puts Dir.getwd
+puts '********************************'
+Dir.foreach(Dir.pwd) do |item|
+  puts item
+end
