@@ -23,6 +23,7 @@ class HomeController < ApplicationController
   end
   
   private
+    # filter params
     def create_params
       @banner_params = params.require(:banner_manage).permit(:title, :link_url, :img_url)
     end
