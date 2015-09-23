@@ -21,6 +21,7 @@ class HomeController < ApplicationController
       render json: {code: false, message: "failure"}
     end
   end
+
   
   private
     # filter params
