@@ -1,5 +1,6 @@
 #source 'https://rubygems.org'
-source 'https://ruby.taobao.org/'
+# source 'https://ruby.taobao.org/'
+source 'https://gems.ruby-china.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -35,18 +36,25 @@ gem 'therubyracer'
 # use postgresql  database
 gem 'pg'
 
-# use debuger
-gem 'pry'
-gem 'pry-remote'
-gem 'pry-nav'
+
 
 gem "pry-rails", "~> 0.3.2"
-gem 'pry-byebug', "~> 2.0.0"
+# gem 'pry-byebug', "~> 2.0.0"
 
 # file upload
 # https://github.com/carrierwaveuploader/carrierwave
+gem 'simple_captcha2', require: 'simple_captcha'
 gem 'carrierwave'
 gem 'uuid'
+
+group :development, :test do
+	# use debuger
+	gem 'pry'
+	gem 'pry-remote'
+	gem 'pry-nav'
+
+	gem "rspec-rails", '~> 3.4'
+end
 # tangbt end 
 
 # Use ActiveModel has_secure_password

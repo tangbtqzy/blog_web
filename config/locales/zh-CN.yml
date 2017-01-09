@@ -1,0 +1,9 @@
+zh-CN:
+  hello: "Hello world"
+  simple_captcha:
+    placeholder: "请输入验证码"
+    # label: "Enter the code in the box:"
+    refresh_button_text: "刷新"
+    message:
+      default: "验证码错误"
+      user: "验证码错误"
