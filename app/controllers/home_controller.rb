@@ -22,6 +22,12 @@ class HomeController < ApplicationController
     end
   end
 
+  # upload file list
+  def upfiles
+    @files = BannerManage.all
+    puts @files
+  end
+
   
   private
     # filter params

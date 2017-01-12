@@ -1,0 +1,2 @@
+class LifeController < ApplicationController
+end

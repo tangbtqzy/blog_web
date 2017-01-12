@@ -25,5 +25,7 @@ module Project
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :"zh-CN"
+    Rails.application.config.assets.precompile += %w( base.css index.css style.css about.css mark.css share.css learn.css)
+    Rails.application.config.assets.precompile += %w( silder.js)
   end
 end

@@ -24,8 +24,8 @@ class CommentController < ApplicationController
    # show a product
    def show
       @getinfo = Digest::MD5.hexdigest(BaseConfig.getip) 
-      # send email
       
+      # send email
       @commentdetail = Comment.detail params[:id]
    end
 

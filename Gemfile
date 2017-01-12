@@ -31,14 +31,12 @@ gem 'spring',        group: :development
 
 # js probermom
 gem 'execjs'
-gem 'therubyracer' 
+# gem 'therubyracer' 
 
 # use postgresql  database
 gem 'pg'
+gem 'rufus-scheduler'
 
-
-
-gem "pry-rails", "~> 0.3.2"
 # gem 'pry-byebug', "~> 2.0.0"
 
 # file upload
